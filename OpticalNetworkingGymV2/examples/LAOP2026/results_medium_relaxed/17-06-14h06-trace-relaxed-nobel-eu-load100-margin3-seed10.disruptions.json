@@ -1,0 +1,96 @@
+[
+  {
+    "step_index": 222,
+    "trigger_request": {
+      "service_id": 221,
+      "source_id": 11,
+      "destination_id": 21,
+      "bit_rate": 480
+    },
+    "trigger_action": 5380,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 10.76875406672518,
+      "osnr_req": 9.7296
+    },
+    "dropped_services": [
+      {
+        "service_id": 159,
+        "source_id": 14,
+        "destination_id": 21,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Lyon",
+          "Zurich",
+          "Milan",
+          "Rome"
+        ],
+        "service_slot_start": 252,
+        "service_slot_end_exclusive": 253,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 17.25753501283212,
+        "osnr_after_refresh": 15.813011266596115,
+        "delta_osnr_db": -1.444523746236003,
+        "osnr_requirement": 19.1609,
+        "margin_to_requirement_db": -3.3478887334038863,
+        "established_osnr": 19.16365927391012,
+        "shared_link_service_count_at_establishment": 16,
+        "shared_link_service_count_after_drop": 15,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 1,
+    "disrupted_count_cumulative": 1
+  },
+  {
+    "step_index": 428,
+    "trigger_request": {
+      "service_id": 427,
+      "source_id": 26,
+      "destination_id": 9,
+      "bit_rate": 480
+    },
+    "trigger_action": 3447,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 10.957107611204002,
+      "osnr_req": 9.7296
+    },
+    "dropped_services": [
+      {
+        "service_id": 404,
+        "source_id": 12,
+        "destination_id": 10,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Frankfurt",
+          "Brussels",
+          "Amsterdam",
+          "Hamburg"
+        ],
+        "service_slot_start": 268,
+        "service_slot_end_exclusive": 269,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 19.15321424723247,
+        "osnr_after_refresh": 16.070065813280173,
+        "delta_osnr_db": -3.083148433952296,
+        "osnr_requirement": 19.1609,
+        "margin_to_requirement_db": -3.090834186719828,
+        "established_osnr": 19.208432599989997,
+        "shared_link_service_count_at_establishment": 29,
+        "shared_link_service_count_after_drop": 28,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 2,
+    "disrupted_count_cumulative": 2
+  }
+]

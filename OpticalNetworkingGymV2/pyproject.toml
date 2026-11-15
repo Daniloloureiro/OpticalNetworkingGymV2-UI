@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "Cython>=3.0", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optical-networking-gym-v2"
+version = "0.1.0"
+description = "Incremental v2 rewrite of the optical networking gym"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["gymnasium", "networkx", "numpy"]
+
+[project.optional-dependencies]
+dev = ["pytest", "Cython>=3.0"]
+gui = ["PySide6>=6.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+optical_networking_gym_v2 = ["topologies/*.xml", "topologies/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"

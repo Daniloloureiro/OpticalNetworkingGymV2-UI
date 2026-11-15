@@ -1,0 +1,1656 @@
+[
+  {
+    "step_index": 51,
+    "trigger_request": {
+      "service_id": 50,
+      "source_id": 18,
+      "destination_id": 19,
+      "bit_rate": 480
+    },
+    "trigger_action": 888,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.730625374988499,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 0,
+        "source_id": 18,
+        "destination_id": 0,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Amsterdam",
+          "Hamburg",
+          "Berlin",
+          "Copenhagen",
+          "Oslo"
+        ],
+        "service_slot_start": 0,
+        "service_slot_end_exclusive": 1,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.066350035965,
+        "osnr_after_refresh": 18.883435382580448,
+        "delta_osnr_db": -0.18291465338455382,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.6300646174195528,
+        "established_osnr": 20.180690067178464,
+        "shared_link_service_count_at_establishment": 0,
+        "shared_link_service_count_after_drop": 12,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      },
+      {
+        "service_id": 12,
+        "source_id": 19,
+        "destination_id": 4,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Berlin",
+          "Hamburg",
+          "Frankfurt",
+          "Brussels",
+          "Paris"
+        ],
+        "service_slot_start": 306,
+        "service_slot_end_exclusive": 307,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.26413138156914,
+        "osnr_after_refresh": 16.097227116756724,
+        "delta_osnr_db": -0.16690426481241616,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.563672883243278,
+        "established_osnr": 16.929948415725622,
+        "shared_link_service_count_at_establishment": 3,
+        "shared_link_service_count_after_drop": 14,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 2,
+    "dropped_count_cumulative": 2,
+    "disrupted_count_cumulative": 2
+  },
+  {
+    "step_index": 71,
+    "trigger_request": {
+      "service_id": 70,
+      "source_id": 3,
+      "destination_id": 13,
+      "bit_rate": 480
+    },
+    "trigger_action": 4713,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.03657435941736,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 17,
+        "source_id": 13,
+        "destination_id": 7,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Budapest",
+          "Prague",
+          "Berlin",
+          "Hamburg",
+          "Amsterdam",
+          "London"
+        ],
+        "service_slot_start": 186,
+        "service_slot_end_exclusive": 187,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.164857953500544,
+        "osnr_after_refresh": 16.054212661058138,
+        "delta_osnr_db": -0.11064529244240617,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.6066873389418639,
+        "established_osnr": 19.22880113074036,
+        "shared_link_service_count_at_establishment": 7,
+        "shared_link_service_count_after_drop": 21,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 3,
+    "disrupted_count_cumulative": 3
+  },
+  {
+    "step_index": 79,
+    "trigger_request": {
+      "service_id": 78,
+      "source_id": 26,
+      "destination_id": 5,
+      "bit_rate": 240
+    },
+    "trigger_action": 548,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 16.928617132203623,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 48,
+        "source_id": 5,
+        "destination_id": 8,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Brussels",
+          "Frankfurt",
+          "Hamburg",
+          "Berlin",
+          "Copenhagen"
+        ],
+        "service_slot_start": 89,
+        "service_slot_end_exclusive": 90,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.170893304788695,
+        "osnr_after_refresh": 16.120822610316424,
+        "delta_osnr_db": -0.050070694472271526,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.540077389683578,
+        "established_osnr": 16.957150701397,
+        "shared_link_service_count_at_establishment": 18,
+        "shared_link_service_count_after_drop": 33,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 4,
+    "disrupted_count_cumulative": 4
+  },
+  {
+    "step_index": 84,
+    "trigger_request": {
+      "service_id": 83,
+      "source_id": 5,
+      "destination_id": 3,
+      "bit_rate": 240
+    },
+    "trigger_action": 767,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.920929800971388,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 18,
+        "source_id": 10,
+        "destination_id": 7,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Budapest",
+          "Prague",
+          "Vienna",
+          "Munich",
+          "Frankfurt"
+        ],
+        "service_slot_start": 84,
+        "service_slot_end_exclusive": 85,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.02554882839848,
+        "osnr_after_refresh": 18.793780323375906,
+        "delta_osnr_db": -0.2317685050225755,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.719719676624095,
+        "established_osnr": 19.519360663440683,
+        "shared_link_service_count_at_establishment": 7,
+        "shared_link_service_count_after_drop": 17,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      },
+      {
+        "service_id": 56,
+        "source_id": 11,
+        "destination_id": 5,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Brussels",
+          "Amsterdam",
+          "Glasgow"
+        ],
+        "service_slot_start": 161,
+        "service_slot_end_exclusive": 162,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.338354771815485,
+        "osnr_after_refresh": 16.133577852158254,
+        "delta_osnr_db": -0.2047769196572311,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5273221478417476,
+        "established_osnr": 16.935173418874413,
+        "shared_link_service_count_at_establishment": 17,
+        "shared_link_service_count_after_drop": 24,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 2,
+    "dropped_count_cumulative": 6,
+    "disrupted_count_cumulative": 6
+  },
+  {
+    "step_index": 124,
+    "trigger_request": {
+      "service_id": 123,
+      "source_id": 15,
+      "destination_id": 23,
+      "bit_rate": 120
+    },
+    "trigger_action": 388,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 19.40424692866213,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 9,
+        "source_id": 5,
+        "destination_id": 27,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Strasbourg",
+          "Zurich"
+        ],
+        "service_slot_start": 8,
+        "service_slot_end_exclusive": 9,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.081889231397067,
+        "osnr_after_refresh": 18.98939055713824,
+        "delta_osnr_db": -0.0924986742588274,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.5241094428617608,
+        "established_osnr": 19.707573925967957,
+        "shared_link_service_count_at_establishment": 2,
+        "shared_link_service_count_after_drop": 18,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 7,
+    "disrupted_count_cumulative": 7
+  },
+  {
+    "step_index": 135,
+    "trigger_request": {
+      "service_id": 134,
+      "source_id": 16,
+      "destination_id": 23,
+      "bit_rate": 480
+    },
+    "trigger_action": 147,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 23.139992259610196,
+      "osnr_req": 19.5135
+    },
+    "dropped_services": [
+      {
+        "service_id": 8,
+        "source_id": 13,
+        "destination_id": 16,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "London",
+          "Paris",
+          "Strasbourg",
+          "Zurich",
+          "Milan"
+        ],
+        "service_slot_start": 3,
+        "service_slot_end_exclusive": 4,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.01694292062907,
+        "osnr_after_refresh": 18.9590253491314,
+        "delta_osnr_db": -0.05791757149766852,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.5544746508685989,
+        "established_osnr": 19.995036231667186,
+        "shared_link_service_count_at_establishment": 1,
+        "shared_link_service_count_after_drop": 28,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 8,
+    "disrupted_count_cumulative": 8
+  },
+  {
+    "step_index": 149,
+    "trigger_request": {
+      "service_id": 148,
+      "source_id": 25,
+      "destination_id": 6,
+      "bit_rate": 480
+    },
+    "trigger_action": 4666,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.385618502218376,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 68,
+        "source_id": 10,
+        "destination_id": 1,
+        "bit_rate": 48,
+        "path_k": 2,
+        "path_node_names": [
+          "Athens",
+          "Rome",
+          "Milan",
+          "Munich",
+          "Frankfurt"
+        ],
+        "service_slot_start": 27,
+        "service_slot_end_exclusive": 28,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.188944895677718,
+        "osnr_after_refresh": 16.158203713718734,
+        "delta_osnr_db": -0.030741181958983788,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5026962862812674,
+        "established_osnr": 17.077719235142606,
+        "shared_link_service_count_at_establishment": 17,
+        "shared_link_service_count_after_drop": 38,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 9,
+    "disrupted_count_cumulative": 9
+  },
+  {
+    "step_index": 154,
+    "trigger_request": {
+      "service_id": 153,
+      "source_id": 20,
+      "destination_id": 5,
+      "bit_rate": 480
+    },
+    "trigger_action": 4551,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.824566786459846,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 79,
+        "source_id": 25,
+        "destination_id": 5,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Brussels",
+          "Frankfurt",
+          "Hamburg",
+          "Berlin",
+          "Warsaw"
+        ],
+        "service_slot_start": 88,
+        "service_slot_end_exclusive": 89,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 13.943600752997622,
+        "osnr_after_refresh": 13.056173562936417,
+        "delta_osnr_db": -0.8874271900612047,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.6844264370635837,
+        "established_osnr": 15.645117845364355,
+        "shared_link_service_count_at_establishment": 33,
+        "shared_link_service_count_after_drop": 61,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 10,
+    "disrupted_count_cumulative": 10
+  },
+  {
+    "step_index": 189,
+    "trigger_request": {
+      "service_id": 188,
+      "source_id": 4,
+      "destination_id": 0,
+      "bit_rate": 480
+    },
+    "trigger_action": 171,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 20.69423692115391,
+      "osnr_req": 19.5135
+    },
+    "dropped_services": [
+      {
+        "service_id": 66,
+        "source_id": 24,
+        "destination_id": 13,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "London",
+          "Amsterdam",
+          "Hamburg",
+          "Berlin",
+          "Prague",
+          "Vienna"
+        ],
+        "service_slot_start": 12,
+        "service_slot_end_exclusive": 13,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.187941097119495,
+        "osnr_after_refresh": 16.13980538899741,
+        "delta_osnr_db": -0.048135708122085674,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5210946110025922,
+        "established_osnr": 16.797182333045512,
+        "shared_link_service_count_at_establishment": 21,
+        "shared_link_service_count_after_drop": 41,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 11,
+    "disrupted_count_cumulative": 11
+  },
+  {
+    "step_index": 204,
+    "trigger_request": {
+      "service_id": 203,
+      "source_id": 9,
+      "destination_id": 25,
+      "bit_rate": 480
+    },
+    "trigger_action": 693,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.651038672284765,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 137,
+        "source_id": 23,
+        "destination_id": 22,
+        "bit_rate": 120,
+        "path_k": 1,
+        "path_node_names": [
+          "Stockholm",
+          "Warsaw",
+          "Berlin",
+          "Hamburg",
+          "Frankfurt",
+          "Strasbourg"
+        ],
+        "service_slot_start": 64,
+        "service_slot_end_exclusive": 66,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.37615199718426,
+        "osnr_after_refresh": 15.756447637829215,
+        "delta_osnr_db": -0.619704359355044,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.9044523621707867,
+        "established_osnr": 17.38762138751172,
+        "shared_link_service_count_at_establishment": 42,
+        "shared_link_service_count_after_drop": 53,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 12,
+    "disrupted_count_cumulative": 12
+  },
+  {
+    "step_index": 227,
+    "trigger_request": {
+      "service_id": 226,
+      "source_id": 5,
+      "destination_id": 24,
+      "bit_rate": 480
+    },
+    "trigger_action": 674,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.245423859025575,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 84,
+        "source_id": 23,
+        "destination_id": 21,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Rome",
+          "Milan",
+          "Munich",
+          "Frankfurt",
+          "Strasbourg"
+        ],
+        "service_slot_start": 3,
+        "service_slot_end_exclusive": 4,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.18836567092821,
+        "osnr_after_refresh": 16.047305558379005,
+        "delta_osnr_db": -0.14106011254920503,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.6135944416209966,
+        "established_osnr": 17.206786446603967,
+        "shared_link_service_count_at_establishment": 25,
+        "shared_link_service_count_after_drop": 54,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 13,
+    "disrupted_count_cumulative": 13
+  },
+  {
+    "step_index": 242,
+    "trigger_request": {
+      "service_id": 241,
+      "source_id": 23,
+      "destination_id": 3,
+      "bit_rate": 480
+    },
+    "trigger_action": 2618,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.017277470803425,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 159,
+        "source_id": 14,
+        "destination_id": 21,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Lyon",
+          "Paris",
+          "Strasbourg",
+          "Zurich",
+          "Milan",
+          "Rome"
+        ],
+        "service_slot_start": 15,
+        "service_slot_end_exclusive": 16,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.216420906623558,
+        "osnr_after_refresh": 15.918430045400566,
+        "delta_osnr_db": -0.297990861222992,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.7424699545994358,
+        "established_osnr": 17.435947321093444,
+        "shared_link_service_count_at_establishment": 40,
+        "shared_link_service_count_after_drop": 47,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 14,
+    "disrupted_count_cumulative": 14
+  },
+  {
+    "step_index": 247,
+    "trigger_request": {
+      "service_id": 246,
+      "source_id": 11,
+      "destination_id": 21,
+      "bit_rate": 480
+    },
+    "trigger_action": 4835,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 12.646114592965866,
+      "osnr_req": 11.3454
+    },
+    "dropped_services": [
+      {
+        "service_id": 189,
+        "source_id": 16,
+        "destination_id": 19,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Milan",
+          "Zurich",
+          "Strasbourg",
+          "Paris"
+        ],
+        "service_slot_start": 94,
+        "service_slot_end_exclusive": 95,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.283701996433074,
+        "osnr_after_refresh": 15.97795791009736,
+        "delta_osnr_db": -0.30574408633571437,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.6829420899026424,
+        "established_osnr": 17.425902250911214,
+        "shared_link_service_count_at_establishment": 30,
+        "shared_link_service_count_after_drop": 35,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 15,
+    "disrupted_count_cumulative": 15
+  },
+  {
+    "step_index": 255,
+    "trigger_request": {
+      "service_id": 254,
+      "source_id": 11,
+      "destination_id": 20,
+      "bit_rate": 480
+    },
+    "trigger_action": 2746,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.61844785311239,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 229,
+        "source_id": 0,
+        "destination_id": 18,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Amsterdam",
+          "Hamburg",
+          "Berlin",
+          "Copenhagen",
+          "Oslo"
+        ],
+        "service_slot_start": 184,
+        "service_slot_end_exclusive": 185,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 14.192768327693539,
+        "osnr_after_refresh": 12.868739017227727,
+        "delta_osnr_db": -1.3240293104658125,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.8718609827722741,
+        "established_osnr": 14.16697531883809,
+        "shared_link_service_count_at_establishment": 48,
+        "shared_link_service_count_after_drop": 56,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 16,
+    "disrupted_count_cumulative": 16
+  },
+  {
+    "step_index": 260,
+    "trigger_request": {
+      "service_id": 259,
+      "source_id": 3,
+      "destination_id": 2,
+      "bit_rate": 480
+    },
+    "trigger_action": 1067,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 12.486717703042556,
+      "osnr_req": 11.3454
+    },
+    "dropped_services": [
+      {
+        "service_id": 118,
+        "source_id": 13,
+        "destination_id": 2,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Barcelona",
+          "Lyon",
+          "Paris",
+          "London"
+        ],
+        "service_slot_start": 131,
+        "service_slot_end_exclusive": 132,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.345965078278837,
+        "osnr_after_refresh": 15.706004295621664,
+        "delta_osnr_db": -0.6399607826571732,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.9548957043783375,
+        "established_osnr": 18.23291770850606,
+        "shared_link_service_count_at_establishment": 25,
+        "shared_link_service_count_after_drop": 31,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 17,
+    "disrupted_count_cumulative": 17
+  },
+  {
+    "step_index": 274,
+    "trigger_request": {
+      "service_id": 273,
+      "source_id": 9,
+      "destination_id": 7,
+      "bit_rate": 480
+    },
+    "trigger_action": 649,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.111802901365337,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 3,
+        "source_id": 19,
+        "destination_id": 11,
+        "bit_rate": 120,
+        "path_k": 0,
+        "path_node_names": [
+          "Glasgow",
+          "Dublin",
+          "London",
+          "Paris"
+        ],
+        "service_slot_start": 0,
+        "service_slot_end_exclusive": 2,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.2975967194509,
+        "osnr_after_refresh": 18.987699800721415,
+        "delta_osnr_db": -0.30989691872948555,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.525800199278585,
+        "established_osnr": 20.85548241815106,
+        "shared_link_service_count_at_establishment": 0,
+        "shared_link_service_count_after_drop": 22,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 18,
+    "disrupted_count_cumulative": 18
+  },
+  {
+    "step_index": 276,
+    "trigger_request": {
+      "service_id": 275,
+      "source_id": 11,
+      "destination_id": 26,
+      "bit_rate": 480
+    },
+    "trigger_action": 2594,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.029545565022023,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 115,
+        "source_id": 11,
+        "destination_id": 10,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Frankfurt",
+          "Brussels",
+          "Amsterdam",
+          "Glasgow"
+        ],
+        "service_slot_start": 0,
+        "service_slot_end_exclusive": 1,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.487358725870713,
+        "osnr_after_refresh": 15.971129607578513,
+        "delta_osnr_db": -0.5162291182922001,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.6897703924214884,
+        "established_osnr": 17.367082319523554,
+        "shared_link_service_count_at_establishment": 30,
+        "shared_link_service_count_after_drop": 34,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 19,
+    "disrupted_count_cumulative": 19
+  },
+  {
+    "step_index": 287,
+    "trigger_request": {
+      "service_id": 286,
+      "source_id": 1,
+      "destination_id": 0,
+      "bit_rate": 480
+    },
+    "trigger_action": 3058,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 12.295265093075116,
+      "osnr_req": 11.3454
+    },
+    "dropped_services": [
+      {
+        "service_id": 65,
+        "source_id": 26,
+        "destination_id": 5,
+        "bit_rate": 120,
+        "path_k": 2,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Strasbourg",
+          "Zurich",
+          "Milan",
+          "Rome",
+          "Zagreb"
+        ],
+        "service_slot_start": 203,
+        "service_slot_end_exclusive": 205,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.31046390926815,
+        "osnr_after_refresh": 16.052917404681292,
+        "delta_osnr_db": -0.257546504586859,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.6079825953187097,
+        "established_osnr": 17.398500074985208,
+        "shared_link_service_count_at_establishment": 21,
+        "shared_link_service_count_after_drop": 55,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      },
+      {
+        "service_id": 227,
+        "source_id": 1,
+        "destination_id": 21,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Athens",
+          "Rome"
+        ],
+        "service_slot_start": 7,
+        "service_slot_end_exclusive": 8,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.08179213318066,
+        "osnr_after_refresh": 18.838020249908038,
+        "delta_osnr_db": -0.2437718832726219,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -0.6754797500919629,
+        "established_osnr": 19.542079731735654,
+        "shared_link_service_count_at_establishment": 6,
+        "shared_link_service_count_after_drop": 7,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 2,
+    "dropped_count_cumulative": 21,
+    "disrupted_count_cumulative": 21
+  },
+  {
+    "step_index": 320,
+    "trigger_request": {
+      "service_id": 319,
+      "source_id": 23,
+      "destination_id": 25,
+      "bit_rate": 480
+    },
+    "trigger_action": 2752,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.804413253917055,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 106,
+        "source_id": 25,
+        "destination_id": 14,
+        "bit_rate": 120,
+        "path_k": 1,
+        "path_node_names": [
+          "Lyon",
+          "Zurich",
+          "Milan",
+          "Munich",
+          "Berlin",
+          "Warsaw"
+        ],
+        "service_slot_start": 206,
+        "service_slot_end_exclusive": 208,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.193155511439375,
+        "osnr_after_refresh": 15.734324567620895,
+        "delta_osnr_db": -0.4588309438184801,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.9265754323791064,
+        "established_osnr": 17.30225797954543,
+        "shared_link_service_count_at_establishment": 35,
+        "shared_link_service_count_after_drop": 66,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      },
+      {
+        "service_id": 172,
+        "source_id": 4,
+        "destination_id": 1,
+        "bit_rate": 48,
+        "path_k": 2,
+        "path_node_names": [
+          "Athens",
+          "Belgrade",
+          "Budapest",
+          "Warsaw",
+          "Berlin"
+        ],
+        "service_slot_start": 121,
+        "service_slot_end_exclusive": 122,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 13.263656387927071,
+        "osnr_after_refresh": 13.216525898262404,
+        "delta_osnr_db": -0.04713048966466715,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.5240741017375967,
+        "established_osnr": 13.926611760030712,
+        "shared_link_service_count_at_establishment": 19,
+        "shared_link_service_count_after_drop": 38,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 2,
+    "dropped_count_cumulative": 23,
+    "disrupted_count_cumulative": 23
+  },
+  {
+    "step_index": 396,
+    "trigger_request": {
+      "service_id": 395,
+      "source_id": 18,
+      "destination_id": 13,
+      "bit_rate": 480
+    },
+    "trigger_action": 826,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.932233977446439,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 247,
+        "source_id": 24,
+        "destination_id": 18,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Oslo",
+          "Copenhagen",
+          "Berlin",
+          "Munich",
+          "Vienna"
+        ],
+        "service_slot_start": 177,
+        "service_slot_end_exclusive": 178,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 13.610968537168173,
+        "osnr_after_refresh": 13.051319921557313,
+        "delta_osnr_db": -0.5596486156108593,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.6892800784426871,
+        "established_osnr": 14.99977770225204,
+        "shared_link_service_count_at_establishment": 41,
+        "shared_link_service_count_after_drop": 64,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 24,
+    "disrupted_count_cumulative": 24
+  },
+  {
+    "step_index": 397,
+    "trigger_request": {
+      "service_id": 396,
+      "source_id": 21,
+      "destination_id": 8,
+      "bit_rate": 480
+    },
+    "trigger_action": 799,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.552139962738769,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 282,
+        "source_id": 21,
+        "destination_id": 8,
+        "bit_rate": 120,
+        "path_k": 2,
+        "path_node_names": [
+          "Copenhagen",
+          "Berlin",
+          "Munich",
+          "Vienna",
+          "Zagreb",
+          "Rome"
+        ],
+        "service_slot_start": 171,
+        "service_slot_end_exclusive": 173,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.43405156475271,
+        "osnr_after_refresh": 15.69149324179352,
+        "delta_osnr_db": -0.7425583229591908,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.9694067582064818,
+        "established_osnr": 16.666311240171684,
+        "shared_link_service_count_at_establishment": 59,
+        "shared_link_service_count_after_drop": 76,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 25,
+    "disrupted_count_cumulative": 25
+  },
+  {
+    "step_index": 407,
+    "trigger_request": {
+      "service_id": 406,
+      "source_id": 11,
+      "destination_id": 15,
+      "bit_rate": 480
+    },
+    "trigger_action": 743,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.111100266174281,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 167,
+        "source_id": 9,
+        "destination_id": 21,
+        "bit_rate": 120,
+        "path_k": 0,
+        "path_node_names": [
+          "Dublin",
+          "London",
+          "Paris",
+          "Strasbourg",
+          "Zurich",
+          "Milan",
+          "Rome"
+        ],
+        "service_slot_start": 136,
+        "service_slot_end_exclusive": 138,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.27771830016443,
+        "osnr_after_refresh": 16.15840019833884,
+        "delta_osnr_db": -0.11931810182559133,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5024998016611626,
+        "established_osnr": 17.386221366743104,
+        "shared_link_service_count_at_establishment": 39,
+        "shared_link_service_count_after_drop": 69,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 26,
+    "disrupted_count_cumulative": 26
+  },
+  {
+    "step_index": 419,
+    "trigger_request": {
+      "service_id": 418,
+      "source_id": 8,
+      "destination_id": 6,
+      "bit_rate": 480
+    },
+    "trigger_action": 4160,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 16.738733716178928,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 51,
+        "source_id": 18,
+        "destination_id": 0,
+        "bit_rate": 120,
+        "path_k": 2,
+        "path_node_names": [
+          "Amsterdam",
+          "Brussels",
+          "Frankfurt",
+          "Munich",
+          "Berlin",
+          "Copenhagen",
+          "Oslo"
+        ],
+        "service_slot_start": 11,
+        "service_slot_end_exclusive": 13,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.27992728169502,
+        "osnr_after_refresh": 15.624208841390569,
+        "delta_osnr_db": -0.6557184403044509,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -1.0366911586094325,
+        "established_osnr": 17.33867759775485,
+        "shared_link_service_count_at_establishment": 18,
+        "shared_link_service_count_after_drop": 68,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 27,
+    "disrupted_count_cumulative": 27
+  },
+  {
+    "step_index": 587,
+    "trigger_request": {
+      "service_id": 586,
+      "source_id": 7,
+      "destination_id": 6,
+      "bit_rate": 480
+    },
+    "trigger_action": 2620,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.282176661026561,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 505,
+        "source_id": 19,
+        "destination_id": 12,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "Hamburg",
+          "Frankfurt",
+          "Brussels",
+          "Paris"
+        ],
+        "service_slot_start": 54,
+        "service_slot_end_exclusive": 55,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 17.08606868142003,
+        "osnr_after_refresh": 15.811752669416286,
+        "delta_osnr_db": -1.2743160120037444,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.8491473305837154,
+        "established_osnr": 16.7735993379423,
+        "shared_link_service_count_at_establishment": 56,
+        "shared_link_service_count_after_drop": 60,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 28,
+    "disrupted_count_cumulative": 28
+  },
+  {
+    "step_index": 605,
+    "trigger_request": {
+      "service_id": 604,
+      "source_id": 13,
+      "destination_id": 20,
+      "bit_rate": 480
+    },
+    "trigger_action": 603,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 17.76636407371817,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 548,
+        "source_id": 13,
+        "destination_id": 19,
+        "bit_rate": 48,
+        "path_k": 1,
+        "path_node_names": [
+          "London",
+          "Amsterdam",
+          "Brussels",
+          "Paris"
+        ],
+        "service_slot_start": 295,
+        "service_slot_end_exclusive": 296,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.763988747455755,
+        "osnr_after_refresh": 16.11728441393355,
+        "delta_osnr_db": -0.6467043335222051,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5436155860664513,
+        "established_osnr": 16.788306621920356,
+        "shared_link_service_count_at_establishment": 47,
+        "shared_link_service_count_after_drop": 44,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 29,
+    "disrupted_count_cumulative": 29
+  },
+  {
+    "step_index": 660,
+    "trigger_request": {
+      "service_id": 659,
+      "source_id": 21,
+      "destination_id": 10,
+      "bit_rate": 480
+    },
+    "trigger_action": 369,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 18.370569973021738,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 643,
+        "source_id": 21,
+        "destination_id": 10,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Frankfurt",
+          "Strasbourg",
+          "Zurich",
+          "Milan",
+          "Rome"
+        ],
+        "service_slot_start": 43,
+        "service_slot_end_exclusive": 44,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.637084696701983,
+        "osnr_after_refresh": 15.107097854687748,
+        "delta_osnr_db": -1.5299868420142353,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -1.553802145312254,
+        "established_osnr": 16.786974139493893,
+        "shared_link_service_count_at_establishment": 65,
+        "shared_link_service_count_after_drop": 68,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 30,
+    "disrupted_count_cumulative": 30
+  },
+  {
+    "step_index": 673,
+    "trigger_request": {
+      "service_id": 672,
+      "source_id": 5,
+      "destination_id": 4,
+      "bit_rate": 240
+    },
+    "trigger_action": 4263,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 17.716439228565623,
+      "osnr_req": 16.6609
+    },
+    "dropped_services": [
+      {
+        "service_id": 633,
+        "source_id": 13,
+        "destination_id": 23,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "London",
+          "Paris",
+          "Strasbourg"
+        ],
+        "service_slot_start": 98,
+        "service_slot_end_exclusive": 99,
+        "modulation_name": "64QAM",
+        "osnr_before_refresh": 19.158314407126905,
+        "osnr_after_refresh": 18.424214909758415,
+        "delta_osnr_db": -0.73409949736849,
+        "osnr_requirement": 19.5135,
+        "margin_to_requirement_db": -1.0892850902415852,
+        "established_osnr": 19.51848272455569,
+        "shared_link_service_count_at_establishment": 29,
+        "shared_link_service_count_after_drop": 32,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 31,
+    "disrupted_count_cumulative": 31
+  },
+  {
+    "step_index": 679,
+    "trigger_request": {
+      "service_id": 678,
+      "source_id": 26,
+      "destination_id": 11,
+      "bit_rate": 480
+    },
+    "trigger_action": 779,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 14.280995959457591,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 174,
+        "source_id": 24,
+        "destination_id": 11,
+        "bit_rate": 120,
+        "path_k": 1,
+        "path_node_names": [
+          "Glasgow",
+          "Amsterdam",
+          "Brussels",
+          "Frankfurt",
+          "Munich",
+          "Vienna"
+        ],
+        "service_slot_start": 135,
+        "service_slot_end_exclusive": 137,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.61158876188768,
+        "osnr_after_refresh": 16.154023481100786,
+        "delta_osnr_db": -0.45756528078689485,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5068765188992153,
+        "established_osnr": 16.713300469209116,
+        "shared_link_service_count_at_establishment": 54,
+        "shared_link_service_count_after_drop": 67,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 32,
+    "disrupted_count_cumulative": 32
+  },
+  {
+    "step_index": 717,
+    "trigger_request": {
+      "service_id": 716,
+      "source_id": 3,
+      "destination_id": 11,
+      "bit_rate": 240
+    },
+    "trigger_action": 4633,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.394335413738267,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 426,
+        "source_id": 0,
+        "destination_id": 21,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Amsterdam",
+          "Brussels",
+          "Frankfurt",
+          "Strasbourg",
+          "Zurich",
+          "Milan",
+          "Rome"
+        ],
+        "service_slot_start": 192,
+        "service_slot_end_exclusive": 193,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 13.259394160474262,
+        "osnr_after_refresh": 13.202125100330768,
+        "delta_osnr_db": -0.05726906014349353,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.5384748996692323,
+        "established_osnr": 13.840390264403084,
+        "shared_link_service_count_at_establishment": 81,
+        "shared_link_service_count_after_drop": 107,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 33,
+    "disrupted_count_cumulative": 33
+  },
+  {
+    "step_index": 832,
+    "trigger_request": {
+      "service_id": 831,
+      "source_id": 5,
+      "destination_id": 3,
+      "bit_rate": 240
+    },
+    "trigger_action": 2673,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.664599361480963,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 527,
+        "source_id": 20,
+        "destination_id": 0,
+        "bit_rate": 48,
+        "path_k": 2,
+        "path_node_names": [
+          "Amsterdam",
+          "Brussels",
+          "Frankfurt",
+          "Munich",
+          "Vienna",
+          "Prague"
+        ],
+        "service_slot_start": 111,
+        "service_slot_end_exclusive": 112,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 13.908655483694588,
+        "osnr_after_refresh": 12.988726027190632,
+        "delta_osnr_db": -0.9199294565039562,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -0.7518739728093689,
+        "established_osnr": 14.089110020326888,
+        "shared_link_service_count_at_establishment": 74,
+        "shared_link_service_count_after_drop": 81,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 34,
+    "disrupted_count_cumulative": 34
+  },
+  {
+    "step_index": 891,
+    "trigger_request": {
+      "service_id": 890,
+      "source_id": 1,
+      "destination_id": 5,
+      "bit_rate": 480
+    },
+    "trigger_action": 3005,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 11.642066428402718,
+      "osnr_req": 11.3454
+    },
+    "dropped_services": [
+      {
+        "service_id": 861,
+        "source_id": 14,
+        "destination_id": 1,
+        "bit_rate": 48,
+        "path_k": 0,
+        "path_node_names": [
+          "Athens",
+          "Rome",
+          "Milan",
+          "Zurich",
+          "Lyon"
+        ],
+        "service_slot_start": 117,
+        "service_slot_end_exclusive": 118,
+        "modulation_name": "16QAM",
+        "osnr_before_refresh": 14.696286632438824,
+        "osnr_after_refresh": 12.631180753596114,
+        "delta_osnr_db": -2.0651058788427097,
+        "osnr_requirement": 13.7406,
+        "margin_to_requirement_db": -1.1094192464038866,
+        "established_osnr": 13.767243622003145,
+        "shared_link_service_count_at_establishment": 52,
+        "shared_link_service_count_after_drop": 53,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 35,
+    "disrupted_count_cumulative": 35
+  },
+  {
+    "step_index": 937,
+    "trigger_request": {
+      "service_id": 936,
+      "source_id": 5,
+      "destination_id": 22,
+      "bit_rate": 240
+    },
+    "trigger_action": 2621,
+    "trigger_outcome": {
+      "status": "accepted",
+      "accepted": true,
+      "osnr": 15.316635824091929,
+      "osnr_req": 13.7406
+    },
+    "dropped_services": [
+      {
+        "service_id": 878,
+        "source_id": 25,
+        "destination_id": 5,
+        "bit_rate": 120,
+        "path_k": 0,
+        "path_node_names": [
+          "Bordeaux",
+          "Paris",
+          "Brussels",
+          "Amsterdam",
+          "Hamburg",
+          "Berlin",
+          "Warsaw"
+        ],
+        "service_slot_start": 139,
+        "service_slot_end_exclusive": 141,
+        "modulation_name": "32QAM",
+        "osnr_before_refresh": 16.163991392905604,
+        "osnr_after_refresh": 16.106650675041024,
+        "delta_osnr_db": -0.05734071786458017,
+        "osnr_requirement": 16.6609,
+        "margin_to_requirement_db": -0.5542493249589775,
+        "established_osnr": 16.727334236114935,
+        "shared_link_service_count_at_establishment": 80,
+        "shared_link_service_count_after_drop": 81,
+        "disruption_count": 1,
+        "drop_reason": "osnr_below_required_margin"
+      }
+    ],
+    "dropped_count_in_step": 1,
+    "dropped_count_cumulative": 36,
+    "disrupted_count_cumulative": 36
+  }
+]

@@ -1,0 +1,28 @@
+# Ambientes virtuais e cache Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Artefatos de compilação Cython e PyInstaller
+build/
+dist/
+*.so
+*.pyd
+*.dll
+*.dylib
+*.exe
+*.spec.bak
+
+# Resultados e arquivos locais temporários
+results_validacao/
+perf/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
