@@ -44,12 +44,12 @@ class QoTPanel(QWidget):
         root_layout.setSpacing(10)
 
         self.header_banner = create_academic_header(
-            title="4. Qualidade de Transmissão (QoT), Disrupções & Formatos de Modulação",
+            title="Modulação e QoT",
             subtitle=(
-                "Defina o critério físico de admissão de canais (GSNR / Alcance), a margem de projeto "
-                "contra degradação não-linear (NLI), o tratamento de disrupções e as constelações ópticas."
+                "Configure os formatos de modulação óptica adaptativa, o critério físico de admissão "
+                "de canais (GSNR / Alcance), a margem de projeto e o monitoramento de disrupções."
             ),
-            badge_text="RMLSA ADAPTATIVO • LIMIARES FEC PRÉ-CORREÇÃO",
+            badge_text="",
             parent=self,
         )
         root_layout.addWidget(self.header_banner)
@@ -57,7 +57,7 @@ class QoTPanel(QWidget):
         splitter = QSplitter(Qt.Orientation.Horizontal)
         root_layout.addWidget(splitter, 1)
 
-        # ── Coluna da Esquerda: Configurações de QoT e Modulações ─────────
+        # ── Coluna da Esquerda: Configurações de Modulação e QoT ─────────
         left_scroll = QScrollArea()
         left_scroll.setWidgetResizable(True)
         left_scroll.setFrameShape(QFrame.Shape.NoFrame)
@@ -68,7 +68,56 @@ class QoTPanel(QWidget):
         config_layout.setContentsMargins(0, 0, 6, 0)
         config_layout.setSpacing(12)
 
-        # Grupo 1: Restrições de Qualidade de Transmissão
+        # Grupo 1: Configurações de Modulação (Primeiro)
+        self.mods_catalog_group = QGroupBox("Configurações de Modulação (Constelações Habilitadas)")
+        mods_layout = QVBoxLayout(self.mods_catalog_group)
+        mods_layout.setContentsMargins(14, 22, 14, 14)
+        mods_layout.setSpacing(10)
+
+        grid = QGridLayout()
+        grid.setSpacing(8)
+        self.mod_checkboxes: dict[str, QCheckBox] = {}
+        for idx, (mod_name, eff, osnr_th, reach_km, _, _) in enumerate(_MODULATION_SPECS):
+            cb = QCheckBox(f"{mod_name} ({eff} b/s/Hz • {osnr_th:.1f} dB)")
+            cb.setChecked(True)
+            cb.setStyleSheet("font-weight: 600; font-size: 10.5px;")
+            cb.toggled.connect(self._on_changed)
+            self.mod_checkboxes[mod_name] = cb
+            grid.addWidget(cb, idx // 2, idx % 2)
+        mods_layout.addLayout(grid)
+
+        # Modulações a Considerar
+        self.consider_container = QWidget()
+        consider_layout = QHBoxLayout(self.consider_container)
+        consider_layout.setContentsMargins(0, 4, 0, 0)
+        consider_layout.setSpacing(10)
+
+        self.limit_mod_checkbox = QCheckBox("Limitar Modulações Candidatas")
+        self.limit_mod_checkbox.setMinimumWidth(145)
+        self.limit_mod_checkbox.setStyleSheet("font-weight: 600;")
+        self.limit_mod_checkbox.toggled.connect(self._on_limit_toggled)
+        consider_layout.addWidget(self.limit_mod_checkbox)
+
+        self.mod_count_spin = QSpinBox()
+        self.mod_count_spin.setMinimum(1)
+        self.mod_count_spin.setMaximum(6)
+        self.mod_count_spin.setValue(6)
+        self.mod_count_spin.setSuffix(" formatos")
+        self.mod_count_spin.setEnabled(False)
+        self.mod_count_spin.valueChanged.connect(self._on_changed)
+        consider_layout.addWidget(self.mod_count_spin, 1)
+
+        self.consider_help_btn = self._create_help_button(
+            "Subconjunto de Modulações Candidatas",
+            "Quando habilitado, restringe a busca às <i>N</i> modulações mais eficientes viáveis para o caminho, "
+            "reduzindo a dimensão do espaço de ação em agentes de Aprendizado por Reforço e heurísticas."
+        )
+        consider_layout.addWidget(self.consider_help_btn)
+        mods_layout.addWidget(self.consider_container)
+
+        config_layout.addWidget(self.mods_catalog_group)
+
+        # Grupo 2: Restrições de Qualidade de Transmissão (QoT)
         self.qot_group = QGroupBox("Critério de Validação de QoT e Margem de Projeto")
         qot_layout = QVBoxLayout(self.qot_group)
         qot_layout.setContentsMargins(14, 22, 14, 14)
@@ -136,38 +185,9 @@ class QoTPanel(QWidget):
         self.margin_widget.valueChanged.connect(self._on_changed)
         qot_layout.addWidget(self.margin_widget)
 
-        # Modulações a Considerar
-        self.consider_container = QWidget()
-        consider_layout = QHBoxLayout(self.consider_container)
-        consider_layout.setContentsMargins(0, 3, 0, 3)
-        consider_layout.setSpacing(10)
-
-        self.limit_mod_checkbox = QCheckBox("Limitar Modulações Candidatas")
-        self.limit_mod_checkbox.setMinimumWidth(145)
-        self.limit_mod_checkbox.setStyleSheet("font-weight: 600;")
-        self.limit_mod_checkbox.toggled.connect(self._on_limit_toggled)
-        consider_layout.addWidget(self.limit_mod_checkbox)
-
-        self.mod_count_spin = QSpinBox()
-        self.mod_count_spin.setMinimum(1)
-        self.mod_count_spin.setMaximum(6)
-        self.mod_count_spin.setValue(6)
-        self.mod_count_spin.setSuffix(" formatos")
-        self.mod_count_spin.setEnabled(False)
-        self.mod_count_spin.valueChanged.connect(self._on_changed)
-        consider_layout.addWidget(self.mod_count_spin, 1)
-
-        self.consider_help_btn = self._create_help_button(
-            "Subconjunto de Modulações Candidatas",
-            "Quando habilitado, restringe a busca às <i>N</i> modulações mais eficientes viáveis para o caminho, "
-            "reduzindo a dimensão do espaço de ação em agentes de Aprendizado por Reforço e heurísticas."
-        )
-        consider_layout.addWidget(self.consider_help_btn)
-        qot_layout.addWidget(self.consider_container)
-
         config_layout.addWidget(self.qot_group)
 
-        # Grupo 2: Monitoramento de Disrupção
+        # Grupo 3: Monitoramento de Disrupção (QoT)
         self.disruption_group = QGroupBox("Dinâmica de Interferência Intercanal (Disrupção QoT)")
         disruption_layout = QVBoxLayout(self.disruption_group)
         disruption_layout.setContentsMargins(14, 22, 14, 14)
@@ -188,34 +208,14 @@ class QoTPanel(QWidget):
         disruption_layout.addWidget(self.drop_on_disruption_check)
 
         disruption_note = QLabel(
-            "Nota Técnica: Para reproduzir os estudos de disrupção física (LAOP / DAFF), "
-            "ative ambas as opções acima para medir conexões derrubadas por interferência NLI."
+            "Para avaliar disrupção física por interferência não-linear (NLI), "
+            "ative as opções acima para contabilizar e derrubar conexões degradadas."
         )
         disruption_note.setWordWrap(True)
         disruption_note.setStyleSheet(f"color: {theme.COLORS.text_secondary}; font-size: 10.5px; padding-top: 4px;")
         disruption_layout.addWidget(disruption_note)
 
         config_layout.addWidget(self.disruption_group)
-
-        # Grupo 3: Modulações Disponíveis (Grade 3x2 limpa)
-        self.mods_catalog_group = QGroupBox("Catálogo de Constelações de Modulação Habilitadas")
-        mods_layout = QVBoxLayout(self.mods_catalog_group)
-        mods_layout.setContentsMargins(14, 22, 14, 14)
-        mods_layout.setSpacing(8)
-
-        grid = QGridLayout()
-        grid.setSpacing(8)
-        self.mod_checkboxes: dict[str, QCheckBox] = {}
-        for idx, (mod_name, eff, osnr_th, reach_km, _, _) in enumerate(_MODULATION_SPECS):
-            cb = QCheckBox(f"{mod_name} ({eff} b/s/Hz • {osnr_th:.1f} dB)")
-            cb.setChecked(True)
-            cb.setStyleSheet("font-weight: 600; font-size: 10.5px;")
-            cb.toggled.connect(self._on_changed)
-            self.mod_checkboxes[mod_name] = cb
-            grid.addWidget(cb, idx // 2, idx % 2)
-        mods_layout.addLayout(grid)
-
-        config_layout.addWidget(self.mods_catalog_group)
         config_layout.addStretch(1)
         left_scroll.setWidget(self.config_container)
         left_scroll.setMinimumWidth(370)

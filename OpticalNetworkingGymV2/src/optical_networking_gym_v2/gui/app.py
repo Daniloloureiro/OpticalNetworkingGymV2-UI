@@ -152,7 +152,7 @@ class MainWindow(QMainWindow):
             "1. Cenário e Topologia",
             "2. Física da Fibra",
             "3. Tráfego e Demandas",
-            "4. QoT e Modulações",
+            "4. Modulação e QoT",
             "5. Heurísticas",
             "6. Resultados e Histórico",
         ])
@@ -572,11 +572,11 @@ class MainWindow(QMainWindow):
             "<li><b>Etapa 2 (Física da Fibra):</b> Ajuste o comprimento máximo de span (80 km), atenuação "
             "(0,20 dB/km), figura de ruído EDFA (4,5 dB) e potência de lançamento (0,0 dBm).</li>"
             "<li><b>Etapa 3 (Tráfego &amp; Demandas):</b> Defina a carga em Erlangs e a distribuição de taxas de linha (10G a 400G).</li>"
-            "<li><b>Etapa 4 (QoT &amp; Modulações):</b> Selecione o modelo <code>ASE+NLI</code>, configure a margem de segurança "
-            "(dB) e ative o monitoramento/derrubada por disrupção para avaliar interferência não-linear intercanal.</li>"
-            "<li><b>Etapa 5 (Heurísticas):</b> Selecione os algoritmos de roteamento e alocação de espectro "
-            "(<i>First Fit</i>, <i>Random</i>, <i>Highest SNR</i>, <i>Load Balancing</i>, <i>Lowest Fragmentation</i>, "
-            "<i>KSP + Best Mod + Last Fit</i>) a comparar.</li>"
+            "<li><b>Etapa 4 (Modulação &amp; QoT):</b> Configure as modulações habilitadas, selecione o modelo "
+            "<code>ASE+NLI</code>, a margem de segurança (dB) e o monitoramento/derrubada por disrupção.</li>"
+            "<li><b>Etapa 5 (Heurísticas):</b> Selecione entre as heurísticas <b>Estáticas</b> "
+            "(<i>First Fit</i>, <i>Last Fit</i>, <i>Random</i>) e <b>Dinâmicas</b> "
+            "(<i>Highest SNR</i>, <i>Load Balancing</i>, <i>Lowest Fragmentation</i>) a comparar.</li>"
             "<li><b>Iniciar Simulação &amp; Etapa 6 (Resultados e Histórico):</b> Clique em <b>Iniciar Simulação</b> para "
             "executar varreduras de carga ou margem em multiprocessamento e inspecione os resultados, histórico e arquivos CSV "
             "no padrão do simulador legado (<code>episodes.csv</code> e <code>summary.csv</code>).</li>"

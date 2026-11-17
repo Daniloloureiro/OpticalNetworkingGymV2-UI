@@ -23,11 +23,11 @@ from optical_networking_gym_v2.gui.controllers.progress_tracker import ProgressT
 
 POLICY_NAME_MAP: dict[str, str] = {
     "select_first_fit_action": "First_Fit",
+    "select_ksp_best_mod_last_fit_action": "Last_Fit",
     "select_random_action": "Random",
     "select_highest_snr_first_fit_action": "Highest_SNR",
     "select_load_balancing_action": "Load_Balancing",
     "select_lowest_fragmentation_action": "Lowest_Fragmentation",
-    "select_ksp_best_mod_last_fit_action": "KSP_Best_Mod_Last_Fit",
 }
 
 

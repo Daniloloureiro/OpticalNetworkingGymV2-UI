@@ -55,82 +55,73 @@ class HeuristicEntry:
 # ── Catálogo de heurísticas ──────────────────────────────────────
 
 HEURISTIC_CATALOG: tuple[HeuristicEntry, ...] = (
+    # ── Heurísticas Estáticas ────────────────────────────────────
     HeuristicEntry(
         id="select_first_fit_action",
         name="First Fit",
         description=(
-            "Atribui o primeiro caminho, modulação e slot disponível "
-            "na ordem sequencial. É a heurística mais rápida e simples, "
-            "servindo como referência base (baseline) para comparação. "
-            "Percorre path → modulação → slot e retorna o primeiro "
-            "candidato válido que satisfaz restrições de recurso e QoT."
+            "Atribui o primeiro caminho, modulação e slot inicial disponível "
+            "na ordem canônica sequencial (Rota → Modulação → Primeiro Slot). "
+            "Heurística estática de referência (baseline) para comparação."
         ),
-        category="runtime",
+        category="Estática",
+        complexity="low",
+    ),
+    HeuristicEntry(
+        id="select_ksp_best_mod_last_fit_action",
+        name="Last Fit",
+        description=(
+            "Percorre as rotas candidatas e modulações (da maior para a menor "
+            "eficiência espectral) e aloca no último bloco de slots contíguos "
+            "disponível (fim do espectro), preservando o início da grade livre."
+        ),
+        category="Estática",
         complexity="low",
     ),
     HeuristicEntry(
         id="select_random_action",
-        name="Random",
+        name="Random (Aleatória)",
         description=(
-            "Seleciona aleatoriamente entre todos os candidatos válidos "
-            "usando reservoir sampling uniforme. Útil como baseline "
-            "estatístico e para avaliar o ganho das heurísticas "
-            "inteligentes em relação à escolha puramente aleatória."
+            "Seleciona uniformemente ao acaso entre todos os candidatos válidos "
+            "(rota, modulação e slot inicial) que atendem às restrições de espectro e QoT. "
+            "Serve como baseline estocástico de referência."
         ),
-        category="runtime",
+        category="Estática",
         complexity="low",
     ),
+    # ── Heurísticas Dinâmicas ────────────────────────────────────
     HeuristicEntry(
         id="select_highest_snr_first_fit_action",
         name="Highest SNR",
         description=(
-            "Seleciona o candidato com a maior margem de OSNR "
-            "(relação sinal-ruído óptica). Maximiza a robustez da "
-            "transmissão, priorizando qualidade do sinal. Útil para "
-            "cenários onde a confiabilidade é mais importante que "
-            "eficiência espectral."
+            "Avalia dinamicamente o estado físico da rede e seleciona o candidato "
+            "com a maior folga de OSNR (margem de relação sinal-ruído óptica), "
+            "maximizando a robustez física da transmissão."
         ),
-        category="runtime",
+        category="Dinâmica",
         complexity="medium",
     ),
     HeuristicEntry(
         id="select_load_balancing_action",
         name="Load Balancing",
         description=(
-            "Minimiza a utilização máxima dos links do caminho, "
-            "distribuindo o tráfego uniformemente pela rede. "
-            "Evita gargalos em enlaces específicos e reduz a "
-            "fragmentação espectral. Usa como critério secundário "
-            "a fragmentação local."
+            "Avalia dinamicamente a ocupação atual dos enlaces e minimiza a "
+            "utilização máxima ao longo da rota, distribuindo o tráfego de "
+            "forma balanceada pela malha óptica."
         ),
-        category="runtime",
+        category="Dinâmica",
         complexity="medium",
     ),
     HeuristicEntry(
         id="select_lowest_fragmentation_action",
         name="Lowest Fragmentation",
         description=(
-            "Minimiza o dano de fragmentação espectral causado pela "
-            "alocação. Avalia: número de blocos livres, tamanho do "
-            "maior bloco, fragmentação local e cortes no espectro. "
-            "Preserva blocos contíguos grandes para futuras "
-            "requisições de alta demanda."
+            "Avalia dinamicamente o dano de fragmentação espectral em tempo real "
+            "(número de blocos livres, maior bloco contíguo e cortes no espectro), "
+            "preservando lacunas contíguas para demandas futuras de alta taxa."
         ),
-        category="runtime",
+        category="Dinâmica",
         complexity="high",
-    ),
-    HeuristicEntry(
-        id="select_ksp_best_mod_last_fit_action",
-        name="KSP + Best Mod + Last Fit",
-        description=(
-            "K-Shortest Path com melhor modulação (maior eficiência "
-            "espectral) e alocação Last-Fit (último slot disponível). "
-            "Combina roteamento otimizado com alocação que agrupa "
-            "slots livres no início do espectro, facilitando "
-            "alocações futuras."
-        ),
-        category="runtime",
-        complexity="medium",
     ),
 )
 

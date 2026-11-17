@@ -66,10 +66,9 @@ class HeuristicsPanel(QWidget):
 
         self.category_combo = QComboBox()
         self.category_combo.addItems([
-            "Todas as Complexidades",
-            "Complexidade Baixa (Baselines)",
-            "Complexidade Média",
-            "Complexidade Alta",
+            "Todas as Heurísticas",
+            "Heurísticas Estáticas",
+            "Heurísticas Dinâmicas",
         ])
         self.category_combo.currentTextChanged.connect(self._apply_filters)
         filter_layout.addWidget(self.category_combo, 1)
@@ -92,7 +91,23 @@ class HeuristicsPanel(QWidget):
         btn_all.clicked.connect(lambda: self._apply_preset([h.id for h in HEURISTIC_CATALOG]))
         presets_row.addWidget(btn_all)
 
-        btn_ff = QPushButton("Apenas First-Fit")
+        btn_static = QPushButton("Estáticas")
+        btn_static.setProperty("class", "flat")
+        btn_static.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn_static.clicked.connect(
+            lambda: self._apply_preset([h.id for h in HEURISTIC_CATALOG if "est" in h.category.lower()])
+        )
+        presets_row.addWidget(btn_static)
+
+        btn_dynamic = QPushButton("Dinâmicas")
+        btn_dynamic.setProperty("class", "flat")
+        btn_dynamic.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn_dynamic.clicked.connect(
+            lambda: self._apply_preset([h.id for h in HEURISTIC_CATALOG if "din" in h.category.lower()])
+        )
+        presets_row.addWidget(btn_dynamic)
+
+        btn_ff = QPushButton("Apenas First Fit")
         btn_ff.setProperty("class", "flat")
         btn_ff.setCursor(Qt.CursorShape.PointingHandCursor)
         btn_ff.clicked.connect(lambda: self._apply_preset(["select_first_fit_action"]))
@@ -101,7 +116,7 @@ class HeuristicsPanel(QWidget):
         filter_outer.addLayout(presets_row)
         list_layout.addWidget(self.filter_group)
 
-        # Área de Rolagem para os Cartões de Heurísticas
+        # Área de Rolagem para os Cartões de Heurísticas Separados em Estáticas e Dinâmicas
         self.scroll_area = QScrollArea()
         self.scroll_area.setWidgetResizable(True)
         self.scroll_area.setFrameShape(QFrame.Shape.NoFrame)
@@ -112,17 +127,26 @@ class HeuristicsPanel(QWidget):
         self.scroll_widget.setStyleSheet("background-color: transparent;")
         self.cards_layout = QVBoxLayout(self.scroll_widget)
         self.cards_layout.setContentsMargins(0, 0, 6, 0)
-        self.cards_layout.setSpacing(8)
+        self.cards_layout.setSpacing(12)
+
+        self.static_group = QGroupBox("Heurísticas Estáticas (First Fit, Last Fit e Random)")
+        self.static_layout = QVBoxLayout(self.static_group)
+        self.static_layout.setContentsMargins(10, 20, 10, 10)
+        self.static_layout.setSpacing(8)
+
+        self.dynamic_group = QGroupBox("Heurísticas Dinâmicas")
+        self.dynamic_layout = QVBoxLayout(self.dynamic_group)
+        self.dynamic_layout.setContentsMargins(10, 20, 10, 10)
+        self.dynamic_layout.setSpacing(8)
 
         self.cards: dict[str, HeuristicCard] = {}
         for entry in HEURISTIC_CATALOG:
-            accent_color = "primary"
-            if entry.complexity == "low":
-                accent_color = "success"
-            elif entry.complexity == "medium":
-                accent_color = "warning"
-            elif entry.complexity == "high":
+            is_static = "est" in entry.category.lower()
+            accent_color = "success" if is_static else "primary"
+            if not is_static and entry.complexity == "high":
                 accent_color = "accent"
+            elif not is_static and entry.complexity == "medium":
+                accent_color = "warning"
 
             card = HeuristicCard(
                 title=entry.name,
@@ -136,9 +160,14 @@ class HeuristicsPanel(QWidget):
             card.setProperty("heuristic_id", entry.id)
             card.toggled.connect(self._on_card_toggled)
 
-            self.cards_layout.addWidget(card)
+            if is_static:
+                self.static_layout.addWidget(card)
+            else:
+                self.dynamic_layout.addWidget(card)
             self.cards[entry.id] = card
 
+        self.cards_layout.addWidget(self.static_group)
+        self.cards_layout.addWidget(self.dynamic_group)
         self.cards_layout.addStretch()
         self.scroll_area.setWidget(self.scroll_widget)
         list_layout.addWidget(self.scroll_area, 1)
@@ -203,17 +232,23 @@ class HeuristicsPanel(QWidget):
             </ol>
 
             <h4 style="color: {c.accent}; margin-bottom: 4px; margin-top: 12px;">
-                Famílias de Algoritmos no Catálogo:
+                1. Heurísticas Estáticas:
             </h4>
             <ul style="margin-top: 2px; padding-left: 18px;">
-                <li><b>Baselines Clássicos (First-Fit / Random):</b> Avaliam a tupla na ordem canônica
-                <code>Rota k &rarr; Modulação m &rarr; Slot f</code> ou por amostragem uniforme entre candidatos válidos.</li>
-                <li><b>Maximização de Relação Sinal-Ruído (Highest SNR):</b> Seleciona o candidato com a maior folga de OSNR,
-                priorizando robustez física do enlace óptico.</li>
-                <li><b>Balanceamento de Carga (Load Balancing):</b> Minimiza a ocupação máxima entre os enlaces da rota para
-                distribuir o tráfego uniformemente na malha.</li>
-                <li><b>Mitigação de Fragmentação (Lowest Fragmentation / KSP + Best Mod + Last Fit):</b> Preserva blocos
-                contíguos livres no espectro para proteger demandas futuras de alta capacidade (100G e 400G).</li>
+                <li><b>First Fit:</b> Seleciona o primeiro candidato viável na ordem canônica
+                <code>Rota k &rarr; Modulação m &rarr; Primeiro Slot f</code>.</li>
+                <li><b>Last Fit:</b> Percorre as rotas e modulações (da maior para a menor eficiência espectral)
+                e aloca no último slot disponível da grade, preservando o início do espectro livre.</li>
+                <li><b>Random (Aleatória):</b> Sorteia uniformemente entre todos os candidatos válidos de rota, modulação e slot.</li>
+            </ul>
+
+            <h4 style="color: {c.accent}; margin-bottom: 4px; margin-top: 12px;">
+                2. Heurísticas Dinâmicas:
+            </h4>
+            <ul style="margin-top: 2px; padding-left: 18px;">
+                <li><b>Highest SNR:</b> Avalia dinamicamente a camada física e escolhe o candidato com a maior folga de OSNR.</li>
+                <li><b>Load Balancing:</b> Minimiza dinamicamente a ocupação máxima entre os enlaces da rota para distribuir a carga na malha.</li>
+                <li><b>Lowest Fragmentation:</b> Minimiza dinamicamente o dano de fragmentação espectral para preservar blocos contíguos livres.</li>
             </ul>
         </div>
         """)
@@ -226,18 +261,20 @@ class HeuristicsPanel(QWidget):
         search_text = self.search_input.text().strip().lower()
         category_filter = self.category_combo.currentText()
 
+        static_visible = 0
+        dynamic_visible = 0
+
         for entry in HEURISTIC_CATALOG:
             card = self.cards.get(entry.id)
             if not card:
                 continue
 
+            is_static = "est" in entry.category.lower()
             matches_category = True
-            if "Baixa" in category_filter:
-                matches_category = (entry.complexity.lower() == "low")
-            elif "Média" in category_filter:
-                matches_category = (entry.complexity.lower() == "medium")
-            elif "Alta" in category_filter:
-                matches_category = (entry.complexity.lower() == "high")
+            if "Estáticas" in category_filter:
+                matches_category = is_static
+            elif "Dinâmicas" in category_filter:
+                matches_category = not is_static
 
             matches_text = True
             if search_text:
@@ -245,9 +282,19 @@ class HeuristicsPanel(QWidget):
                     search_text in entry.name.lower()
                     or search_text in entry.description.lower()
                     or search_text in entry.id.lower()
+                    or search_text in entry.category.lower()
                 )
 
-            card.setVisible(matches_category and matches_text)
+            visible = matches_category and matches_text
+            card.setVisible(visible)
+            if visible:
+                if is_static:
+                    static_visible += 1
+                else:
+                    dynamic_visible += 1
+
+        self.static_group.setVisible(static_visible > 0)
+        self.dynamic_group.setVisible(dynamic_visible > 0)
 
     def load_state(self, state: GUIState) -> None:
         for card in self.cards.values():
